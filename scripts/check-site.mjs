@@ -29,6 +29,8 @@ const checks = [
   ["talents section", /id="talents"/],
   ["brand term", /chief-of-staff/],
   ["release link", /HaloForgeAI\/aegis-release/],
+  ["current release", /Aegis v0\.1\.2 is public-installable today/],
+  ["docker archive fallback", /public Docker archive\s+fallback/],
   ["agent plugins link", /HaloForgeAI\/aegis-agent-plugins/],
   ["talent center link", /HaloForgeAI\/aegis-talent-center/],
 ];
