@@ -82,28 +82,41 @@ nav a:hover {
 .hero {
   position: relative;
   min-height: 84svh;
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 44vw);
+  gap: clamp(20px, 5vw, 64px);
   align-items: center;
   padding: clamp(56px, 8vw, 108px) clamp(20px, 6vw, 88px);
   color: var(--white);
-  background-color: #123355;
-  background-image: url("/assets/aegis-mascot.png");
-  background-position: right 8% center;
-  background-size: min(52vw, 680px);
-  background-repeat: no-repeat;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(156, 225, 215, 0.16), transparent 30%),
+    linear-gradient(135deg, #123355 0%, #163d63 58%, #123355 100%);
 }
 
 .hero::before {
   position: absolute;
   inset: 0;
   content: "";
-  background: rgba(18, 51, 85, 0.68);
+  background:
+    linear-gradient(90deg, rgba(18, 51, 85, 0.08) 0%, rgba(18, 51, 85, 0.02) 100%);
+  pointer-events: none;
 }
 
 .hero-copy {
   position: relative;
   z-index: 1;
   max-width: 760px;
+}
+
+.hero-art {
+  position: relative;
+  z-index: 1;
+  min-height: clamp(360px, 48vw, 700px);
+  background-image: url("/assets/aegis-mascot.png");
+  background-position: center bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter: drop-shadow(0 26px 54px rgba(10, 22, 36, 0.36));
 }
 
 .eyebrow {
@@ -438,10 +451,17 @@ code {
   }
 
   .hero {
-    align-items: flex-start;
-    min-height: 82svh;
-    background-position: right -120px bottom -40px;
-    background-size: 460px;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    align-items: start;
+    min-height: auto;
+    padding-top: 48px;
+    padding-bottom: 32px;
+  }
+
+  .hero-art {
+    min-height: clamp(260px, 72vw, 380px);
+    background-position: center top;
   }
 
   .two-column,
@@ -469,8 +489,22 @@ code {
 
 @media (max-width: 520px) {
   .hero {
-    padding-top: 48px;
-    background-position: right -170px bottom -56px;
+    gap: 12px;
+    padding-bottom: 24px;
+  }
+
+  h1 {
+    font-size: clamp(2.45rem, 14vw, 4rem);
+  }
+
+  .hero-subtitle {
+    margin-top: 22px;
+    font-size: 1.02rem;
+    line-height: 1.58;
+  }
+
+  .hero-art {
+    min-height: clamp(200px, 58vw, 248px);
   }
 
   .button {
