@@ -65,7 +65,7 @@ artifacts:
 2. Mirror CLI release assets into `HaloForgeAI/aegis-release` public GitHub
    Releases.
 3. Verify anonymous installs:
-   - `docker pull ghcr.io/haloforgeai/aegis:v0.1.1`
+   - `docker pull ghcr.io/haloforgeai/aegis:v0.1.2`
    - `curl -I https://github.com/HaloForgeAI/aegis-release/releases/download/...`
 
 Keep the homepage quickstart aligned with those public checks.
