@@ -24,9 +24,13 @@ const checks = [
   ["canonical", /rel="canonical" href="https:\/\/aegis\.haloforge\.dev\/"/],
   ["description", /name="description"/],
   ["og image", /property="og:image"/],
-  ["quickstart section", /id="quickstart"/],
-  ["launch checklist", /id="launch-checklist"/],
+  ["install section", /id="install"/],
+  ["channels section", /id="channels"/],
+  ["talents section", /id="talents"/],
   ["brand term", /chief-of-staff/],
+  ["release link", /HaloForgeAI\/aegis-release/],
+  ["agent plugins link", /HaloForgeAI\/aegis-agent-plugins/],
+  ["talent center link", /HaloForgeAI\/aegis-talent-center/],
 ];
 
 for (const [name, pattern] of checks) {
