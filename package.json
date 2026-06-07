@@ -1,0 +1,14 @@
+{
+  "name": "@haloforge/aegis-site",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node scripts/check-site.mjs",
+    "dev": "wrangler pages dev public --live-reload",
+    "deploy": "wrangler pages deploy public --project-name aegis-site"
+  },
+  "devDependencies": {
+    "wrangler": "^4.87.0"
+  }
+}

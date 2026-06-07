@@ -1,0 +1,38 @@
+import { readFileSync, existsSync } from "node:fs";
+import { join } from "node:path";
+
+const root = new URL("..", import.meta.url).pathname;
+const required = [
+  "public/index.html",
+  "public/styles.css",
+  "public/robots.txt",
+  "public/sitemap.xml",
+  "public/assets/aegis-icon.svg",
+  "public/assets/aegis-icon-white.svg",
+  "public/assets/aegis-mascot.png",
+];
+
+for (const file of required) {
+  if (!existsSync(join(root, file))) {
+    throw new Error(`Missing required file: ${file}`);
+  }
+}
+
+const html = readFileSync(join(root, "public/index.html"), "utf8");
+const checks = [
+  ["title", /<title>Aegis/],
+  ["canonical", /rel="canonical" href="https:\/\/aegis\.haloforge\.dev\/"/],
+  ["description", /name="description"/],
+  ["og image", /property="og:image"/],
+  ["quickstart section", /id="quickstart"/],
+  ["launch checklist", /id="launch-checklist"/],
+  ["brand term", /chief-of-staff/],
+];
+
+for (const [name, pattern] of checks) {
+  if (!pattern.test(html)) {
+    throw new Error(`Site check failed: ${name}`);
+  }
+}
+
+console.log("Aegis site static checks passed.");

@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Aegis - Your lively AI chief-of-staff</title>
+    <meta
+      name="description"
+      content="Aegis is a self-hostable AI chief-of-staff for personal operators and small teams: proactive reminders, team status, local tool execution, and weekly rhythm."
+    />
+    <meta
+      name="keywords"
+      content="Aegis, AI chief-of-staff, HaloForgeAI, self-hosted AI assistant, local gateway, team automation"
+    />
+    <link rel="canonical" href="https://aegis.haloforge.dev/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Aegis - Your lively AI chief-of-staff" />
+    <meta
+      property="og:description"
+      content="Aegis helps personal owners and small teams keep work moving with a Docker control plane and a local gateway for real tools."
+    />
+    <meta property="og:url" content="https://aegis.haloforge.dev/" />
+    <meta property="og:image" content="https://aegis.haloforge.dev/assets/aegis-mascot.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/assets/aegis-icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Aegis home">
+        <img src="/assets/aegis-icon.svg" alt="" />
+        <span>Aegis</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#quickstart">Quickstart</a>
+        <a href="#use-cases">Use cases</a>
+        <a href="#launch-checklist">Launch</a>
+        <a href="https://github.com/HaloForgeAI">GitHub</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Aegis chief-of-staff / Aegis 参谋长</p>
+          <h1 id="hero-title">Your lively AI chief-of-staff.</h1>
+          <p class="hero-subtitle">
+            Aegis watches the work with you: proactive reminders, flexible team
+            workflow, local tool execution, and a weekly rhythm that does not
+            disappear into another chat tab.
+          </p>
+          <div class="hero-actions" aria-label="Hero actions">
+            <a class="button primary" href="#quickstart">Start the self-host path</a>
+            <a class="button secondary" href="#launch-checklist">Public launch status</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="intro band" aria-labelledby="intro-title">
+        <div class="section-inner two-column">
+          <div>
+            <p class="eyebrow">Not a keyword bot</p>
+            <h2 id="intro-title">Aegis plans first, then acts through explicit tools.</h2>
+          </div>
+          <p>
+            The control plane runs in Docker. Anything that needs your local
+            files, terminal, browser, desktop tools, or MCP stdio servers routes
+            through Aegis Local Gateway on your machine. That split keeps the
+            cloud brain durable while preserving the tools that only your host
+            can safely use.
+          </p>
+        </div>
+      </section>
+
+      <section class="band light" id="quickstart" aria-labelledby="quickstart-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="eyebrow">Fast path</p>
+            <h2 id="quickstart-title">The public quickstart target</h2>
+            <p>
+              The source repo can remain private. Public onboarding needs two
+              public artifacts: the GHCR server image and signed CLI releases
+              for macOS arm64 and Windows x64.
+            </p>
+          </div>
+
+          <div class="quickstart-grid">
+            <article class="step-card">
+              <span class="step-number">1</span>
+              <h3>Start the control plane</h3>
+              <pre><code>docker pull ghcr.io/haloforgeai/aegis:v0.1.1</code></pre>
+              <p>
+                Runs the Aegis server stack as a Linux container on Docker
+                Desktop or a Linux host. Public pull requires the GHCR package
+                visibility gate in the launch checklist.
+              </p>
+            </article>
+            <article class="step-card">
+              <span class="step-number">2</span>
+              <h3>Install the local gateway</h3>
+              <pre><code>aegis onboarding doctor
+aegis worker tools --no-exec</code></pre>
+              <p>
+                The gateway is the host edge: filesystem, terminal, browser,
+                and local MCP execution stay on the user's machine.
+              </p>
+            </article>
+            <article class="step-card">
+              <span class="step-number">3</span>
+              <h3>Connect daily channels</h3>
+              <pre><code>aegis status
+aegis diagnostics deployment-readiness</code></pre>
+              <p>
+                Telegram, Discord, Feishu, WeCom, HaloForge, Codex, and Claude
+                Code become surfaces for the same Aegis brain.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="band" id="use-cases" aria-labelledby="use-cases-title">
+        <div class="section-inner">
+          <div class="section-heading compact">
+            <p class="eyebrow">What she watches</p>
+            <h2 id="use-cases-title">Two loops before a thousand integrations.</h2>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card">
+              <h3>Personal automation loop</h3>
+              <p>
+                Reminders, scheduled checks, tool-backed answers, and results
+                delivered back to the channel where the request started.
+              </p>
+            </article>
+            <article class="feature-card">
+              <h3>Owner and team loop</h3>
+              <p>
+                Work items, member status, virtual employee dispatch, evidence,
+                and weekly reporting without making real teammates bind accounts.
+              </p>
+            </article>
+            <article class="feature-card">
+              <h3>Local capability loop</h3>
+              <p>
+                Aegis Manager plans with a real provider; workers execute only
+                structured tool calls and return ledger evidence.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="band split" aria-labelledby="architecture-title">
+        <div class="section-inner architecture">
+          <div>
+            <p class="eyebrow">Architecture</p>
+            <h2 id="architecture-title">Docker control plane. Local host edge.</h2>
+            <p>
+              This is the install shape for real users: durable server state in
+              containers, local gateway on the user's machine, and clear
+              evidence for every tool execution.
+            </p>
+          </div>
+          <div class="diagram" aria-label="Aegis architecture">
+            <div class="node cloud">Docker control plane</div>
+            <div class="connector"></div>
+            <div class="node edge">Aegis Local Gateway</div>
+            <div class="connector"></div>
+            <div class="node tools">Files · terminal · browser · MCP</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="band light" id="launch-checklist" aria-labelledby="launch-title">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="eyebrow">Public launch readiness</p>
+            <h2 id="launch-title">What must be public before the one-line install.</h2>
+            <p>
+              These are operational gates, not product dreams. The homepage
+              should only show a command as generally available after it passes
+              anonymously from a clean machine.
+            </p>
+          </div>
+          <ul class="checklist">
+            <li>
+              <strong>GHCR image visibility:</strong>
+              set `ghcr.io/haloforgeai/aegis` to Public so anonymous `docker pull`
+              works even while `HaloForgeAI/Aegis` remains private.
+            </li>
+            <li>
+              <strong>Public CLI assets:</strong>
+              mirror macOS arm64 and Windows x64 `aegis` downloads into a public
+              release surface.
+            </li>
+            <li>
+              <strong>Public installer:</strong>
+              host a small bootstrap script that downloads the public compose
+              file, starts the image, installs the CLI, and registers the local
+              gateway.
+            </li>
+            <li>
+              <strong>Cloudflare Pages domain:</strong>
+              serve this site from `aegis.haloforge.dev` with the `aegis-site`
+              Pages project.
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <img src="/assets/aegis-icon-white.svg" alt="" />
+        <span>Aegis by HaloForgeAI</span>
+      </div>
+      <p>柔性工作流 · 主动提醒 · 自动周报</p>
+    </footer>
+  </body>
+</html>
