@@ -60,13 +60,14 @@ curl -I https://aegis.haloforge.dev
 The Aegis source repository can stay private, but public onboarding needs public
 artifacts:
 
-1. Prefer making `ghcr.io/haloforgeai/aegis` public in GitHub Container
-   Registry package settings.
-2. Mirror CLI release assets, `SHA256SUMS`, and the Docker archive fallback into
-   `HaloForgeAI/aegis-release` public GitHub Releases.
-3. Verify anonymous installs, accepting the archive fallback while GHCR remains
-   private:
+1. Keep `ghcr.io/haloforgeai/aegis` public in GitHub Container Registry package
+   settings. This is the official full self-host image path.
+2. Mirror CLI release assets and `SHA256SUMS` into
+   `HaloForgeAI/aegis-release` public GitHub Releases. The Docker archive can
+   stay attached as a recovery asset, but it is not the normal install path.
+3. Verify the anonymous public path:
    - `docker pull ghcr.io/haloforgeai/aegis:v0.1.2`
-   - `curl -I https://github.com/HaloForgeAI/aegis-release/releases/download/v0.1.2/aegis-server-v0.1.2-linux-amd64.docker.tar.gz`
+   - `curl -I https://github.com/HaloForgeAI/aegis-release/releases/download/v0.1.2/aegis-cli-v0.1.2-aarch64-apple-darwin.tar.gz`
+   - `curl -I https://github.com/HaloForgeAI/aegis-release/releases/download/v0.1.2/aegis-cli-v0.1.2-x86_64-pc-windows-msvc.zip`
 
 Keep the homepage quickstart aligned with those public checks.

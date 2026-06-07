@@ -132,12 +132,13 @@ powershell -ExecutionPolicy Bypass -File .\install-aegis.ps1</code></pre>
           <div class="release-panel" aria-label="Current public release">
             <div>
               <p class="eyebrow">Current release</p>
-              <h3>Aegis v0.1.2 is public-installable today.</h3>
+              <h3>Aegis v0.1.2 installs from public GHCR and GitHub Releases.</h3>
               <p>
-                The installer downloads signed-by-checksum CLI archives from
-                the public release repository. If GHCR is not anonymously
-                pullable yet, full self-host loads the public Docker archive
-                fallback for the same tag.
+                Full self-host pulls the official
+                ghcr.io/haloforgeai/aegis:v0.1.2 image anonymously, then uses
+                checksum-verified CLI archives from the public release
+                repository. The Docker archive remains a recovery asset for
+                constrained registries, not the normal install path.
               </p>
             </div>
             <a
