@@ -36,6 +36,25 @@ The GitHub Actions workflow validates every push and pull request. Cloudflare
 deploy is manual through `workflow_dispatch` with `deploy=true`, so a missing
 Cloudflare secret cannot break normal content pushes.
 
+## Domain
+
+The Pages project has the custom domain `aegis.haloforge.dev` attached through
+Cloudflare's Pages Domains API. If it stays `pending`, DNS still needs this
+record in the `haloforge.dev` zone:
+
+```text
+Type: CNAME
+Name: aegis
+Target: aegis-site-8ib.pages.dev
+Proxy: enabled
+```
+
+Verify after DNS changes:
+
+```bash
+curl -I https://aegis.haloforge.dev
+```
+
 ## Public Distribution Notes
 
 The Aegis source repository can stay private, but public onboarding needs public

@@ -35,6 +35,7 @@
         <a href="#quickstart">Quickstart</a>
         <a href="#use-cases">Use cases</a>
         <a href="#launch-checklist">Launch</a>
+        <a href="https://github.com/HaloForgeAI/aegis-release">Release</a>
         <a href="https://github.com/HaloForgeAI">GitHub</a>
       </nav>
     </header>
@@ -98,11 +99,11 @@
             <article class="step-card">
               <span class="step-number">2</span>
               <h3>Install the local gateway</h3>
-              <pre><code>aegis onboarding doctor
-aegis worker tools --no-exec</code></pre>
+              <pre><code>curl -fsSL https://raw.githubusercontent.com/HaloForgeAI/aegis-release/main/install.sh | bash -s -- --no-docker</code></pre>
               <p>
                 The gateway is the host edge: filesystem, terminal, browser,
-                and local MCP execution stay on the user's machine.
+                and local MCP execution stay on the user's machine. Full Docker
+                install unlocks after the GHCR image is public.
               </p>
             </article>
             <article class="step-card">
@@ -191,8 +192,8 @@ aegis diagnostics deployment-readiness</code></pre>
             </li>
             <li>
               <strong>Public CLI assets:</strong>
-              mirror macOS arm64 and Windows x64 `aegis` downloads into a public
-              release surface.
+              macOS arm64 and Windows x64 `aegis` downloads now live in
+              `HaloForgeAI/aegis-release`.
             </li>
             <li>
               <strong>Public installer:</strong>
