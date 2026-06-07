@@ -79,8 +79,8 @@
             <p class="eyebrow">Quick install</p>
             <h2 id="install-title">Choose the path that matches your setup.</h2>
             <p>
-              Full self-host needs Docker. Local Gateway-only connects this
-              machine to an Aegis Server you already run elsewhere.
+              Full self-host needs Docker. Worker-only connects this machine to
+              an Aegis Server you already run elsewhere.
             </p>
           </div>
 
@@ -106,14 +106,15 @@ powershell -ExecutionPolicy Bypass -File .\install-aegis.ps1</code></pre>
             </article>
             <article class="step-card">
               <span class="step-number">3</span>
-              <h3>No local Docker</h3>
+              <h3>Worker-only</h3>
               <pre><code>curl -fsSL https://raw.githubusercontent.com/HaloForgeAI/aegis-release/main/install.sh | \
   AEGIS_SERVER_URL="https://aegis.example.com" \
   AEGIS_ACCESS_TOKEN="owner-token" \
-  bash -s -- --no-docker</code></pre>
+  bash -s -- --worker-only</code></pre>
               <p>
-                Use this for CLI and Local Gateway only. The server lives
-                elsewhere; this machine contributes tools and local context.
+                Use this when the server lives elsewhere. It does not install a
+                standalone non-Docker Aegis Server; this machine contributes
+                tools and local context through the Local Gateway.
               </p>
             </article>
           </div>
