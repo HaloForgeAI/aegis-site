@@ -1,7 +1,8 @@
 import { readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
+import { fileURLToPath } from "node:url";
 
-const root = new URL("..", import.meta.url).pathname;
+const root = fileURLToPath(new URL("..", import.meta.url));
 const required = [
   "public/index.html",
   "public/styles.css",
@@ -29,8 +30,8 @@ const checks = [
   ["talents section", /id="talents"/],
   ["brand term", /chief-of-staff/],
   ["release link", /HaloForgeAI\/aegis-release/],
-  ["current release", /Aegis v0\.1\.2 installs from public GHCR and GitHub Releases/],
-  ["official image", /ghcr\.io\/haloforgeai\/aegis:v0\.1\.2/],
+  ["current release", /Aegis v0\.1\.2 installs from public GitHub Release native bundles/],
+  ["native bundle", /checksum-verifiable native bundles/],
   ["agent plugins link", /HaloForgeAI\/aegis-agent-plugins/],
   ["talent center link", /HaloForgeAI\/aegis-talent-center/],
 ];

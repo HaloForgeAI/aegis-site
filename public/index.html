@@ -17,7 +17,7 @@
     <meta property="og:title" content="Aegis - AI chief-of-staff for operators and small teams" />
     <meta
       property="og:description"
-      content="Run Aegis as a Docker control plane with a local gateway, or connect through CLI, MCP, Codex, and Claude Code plugins."
+      content="Run Aegis as a native assistant hub with a local gateway, or connect through CLI, MCP, Codex, and Claude Code plugins."
     />
     <meta property="og:url" content="https://aegis.haloforge.dev/" />
     <meta property="og:image" content="https://aegis.haloforge.dev/assets/aegis-mascot.png" />
@@ -66,10 +66,10 @@
             <h2 id="intro-title">A durable brain, with your machine as the hands.</h2>
           </div>
           <p>
-            The Aegis control plane runs in Docker. The Local Gateway stays on
-            your Mac or Windows machine for files, terminal, browser, GUI, and
-            local MCP tools. Channels are optional surfaces; plugins can be the
-            first way you use Aegis.
+            Aegis runs as native server and CLI binaries. The Local Gateway
+            stays on your Mac, Windows, or Linux machine for files, terminal,
+            browser, GUI, and local MCP tools. Channels are optional surfaces;
+            plugins can be the first way you use Aegis.
           </p>
         </div>
       </section>
@@ -80,8 +80,8 @@
             <p class="eyebrow">Quick install</p>
             <h2 id="install-title">Choose the path that matches your setup.</h2>
             <p>
-              Full self-host needs Docker. Worker-only connects this machine to
-              an Aegis Server you already run elsewhere.
+              Full self-host starts native Aegis locally. Worker-only connects
+              this machine to an Aegis Server you already run elsewhere.
             </p>
           </div>
 
@@ -92,7 +92,7 @@
               <pre><code>curl -fsSL https://raw.githubusercontent.com/HaloForgeAI/aegis-release/main/install.sh | bash</code></pre>
               <p>
                 Installs the macOS arm64 CLI, creates the self-host directory,
-                writes local config, and starts the Docker control plane.
+                writes local config, and starts native Aegis services.
               </p>
             </article>
             <article class="step-card">
@@ -102,7 +102,7 @@
 powershell -ExecutionPolicy Bypass -File .\install-aegis.ps1</code></pre>
               <p>
                 Installs `aegis.exe`, prepares `~/.aegis/self-host`, and runs
-                the same containerized control plane through Docker Desktop.
+                native Aegis services on Windows.
               </p>
             </article>
             <article class="step-card">
@@ -113,9 +113,8 @@ powershell -ExecutionPolicy Bypass -File .\install-aegis.ps1</code></pre>
   AEGIS_ACCESS_TOKEN="owner-token" \
   bash -s -- --worker-only</code></pre>
               <p>
-                Use this when the server lives elsewhere. It does not install a
-                standalone non-Docker Aegis Server; this machine contributes
-                tools and local context through the Local Gateway.
+                Use this when the server lives elsewhere. This machine
+                contributes tools and local context through the Local Gateway.
               </p>
             </article>
           </div>
@@ -123,7 +122,7 @@ powershell -ExecutionPolicy Bypass -File .\install-aegis.ps1</code></pre>
           <div class="requirement-panel">
             <h3>Before you start</h3>
             <ul class="pill-list">
-              <li>Docker Desktop or Docker Engine + Compose v2 for full self-host</li>
+              <li>Native Linux, macOS Apple Silicon, or Windows x64 host</li>
               <li>Optional LLM provider keys for provider-backed planning</li>
               <li>Optional Telegram BotFather token if you want Telegram</li>
               <li>Optional Codex / Claude Code plugins if agents are your main surface</li>
@@ -133,13 +132,11 @@ powershell -ExecutionPolicy Bypass -File .\install-aegis.ps1</code></pre>
           <div class="release-panel" aria-label="Current public release">
             <div>
               <p class="eyebrow">Current release</p>
-              <h3>Aegis v0.1.2 installs from public GHCR and GitHub Releases.</h3>
+              <h3>Aegis v0.1.2 installs from public GitHub Release native bundles.</h3>
               <p>
-                Full self-host pulls the official
-                ghcr.io/haloforgeai/aegis:v0.1.2 image anonymously, then uses
-                checksum-verified CLI archives from the public release
-                repository. The Docker archive remains a recovery asset for
-                constrained registries, not the normal install path.
+                Full self-host downloads checksum-verifiable native bundles
+                from the public release repository, then starts the server,
+                CLI, and Local Gateway on your machine.
               </p>
             </div>
             <a
@@ -195,7 +192,7 @@ powershell -ExecutionPolicy Bypass -File .\install-aegis.ps1</code></pre>
             </p>
           </div>
           <div class="diagram" aria-label="Aegis architecture">
-            <div class="node cloud">Docker control plane</div>
+            <div class="node cloud">Native Aegis server</div>
             <div class="connector"></div>
             <div class="node edge">Local Gateway on your host</div>
             <div class="connector"></div>
