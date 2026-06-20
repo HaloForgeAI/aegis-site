@@ -1,6 +1,6 @@
 # Aegis Site
 
-Public brand and launch site for Aegis, the HaloForgeAI chief-of-staff product.
+Public brand and launch site for Aegis, the HaloForgeAI AI assistant product.
 
 - Production domain target: `https://aegis.haloforge.dev`
 - Cloudflare Pages project: `aegis-site`

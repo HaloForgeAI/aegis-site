@@ -28,7 +28,7 @@ const checks = [
   ["install section", /id="install"/],
   ["channels section", /id="channels"/],
   ["talents section", /id="talents"/],
-  ["brand term", /chief-of-staff/],
+  ["brand term", /AI assistant/],
   ["release link", /HaloForgeAI\/aegis-release/],
   ["current release", /Aegis v0\.1\.2 installs from public GitHub Release native bundles/],
   ["native bundle", /checksum-verifiable native bundles/],
