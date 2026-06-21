@@ -3,21 +3,21 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Aegis - AI assistant for operators and small teams</title>
+    <title>Aegis - Personal AI assistant hub for Core, apps, nodes, and agents</title>
     <meta
       name="description"
-      content="Aegis is a self-hostable AI assistant for owners, builders, and small teams: reminders, team status, local tool execution, agent plugins, and Talent Center discovery."
+      content="Aegis is a personal AI assistant hub for owners: Aegis Core, native apps, Local Gateway, mobile nodes, channels, agent plugins, tools, memory, approvals, and evidence."
     />
     <meta
       name="keywords"
-      content="Aegis, AI assistant, HaloForgeAI, self-hosted AI assistant, local gateway, MCP, Talent Center, agent plugins"
+      content="Aegis, HaloForgeAI, personal AI assistant, Aegis Core, native app, local gateway, native node, MCP, agent plugins"
     />
     <link rel="canonical" href="https://aegis.haloforge.dev/" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Aegis - AI assistant for operators and small teams" />
+    <meta property="og:title" content="Aegis - Personal AI assistant hub" />
     <meta
       property="og:description"
-      content="Run Aegis as a native assistant hub with a local gateway, or connect through CLI, MCP, Codex, and Claude Code plugins."
+      content="Run Aegis Core, connect native apps and Local Gateway nodes, and operate through Chat, CLI, MCP, Codex, Claude Code, channels, and mobile."
     />
     <meta property="og:url" content="https://aegis.haloforge.dev/" />
     <meta property="og:image" content="https://aegis.haloforge.dev/assets/aegis-mascot.png" />
@@ -33,8 +33,9 @@
       </a>
       <nav aria-label="Primary navigation">
         <a href="#install">Install</a>
-        <a href="#paths">Use</a>
-        <a href="#channels">Channels</a>
+        <a href="#paths">Apps</a>
+        <a href="#architecture">Architecture</a>
+        <a href="https://docs.aegis.haloforge.dev/">Docs</a>
         <a href="#talents">Talents</a>
         <a href="https://github.com/HaloForgeAI/aegis-release">Release</a>
       </nav>
@@ -43,17 +44,17 @@
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow">Aegis AI assistant</p>
-          <h1 id="hero-title">A calm operating layer for your work.</h1>
+          <p class="eyebrow">Aegis assistant hub</p>
+          <h1 id="hero-title">One Core for your AI work, devices, and agents.</h1>
           <p class="hero-subtitle">
-            Aegis helps owners and small teams keep momentum: remember what
-            matters, turn status into structured work, run local tools through
-            explicit evidence, and meet you through CLI, MCP, channels, or
-            agent plugins.
+            Aegis gives you a stateful personal AI runtime: natural-language
+            planning through real providers, explicit local execution through
+            Gateway and Native Nodes, modern desktop and mobile apps, approvals,
+            memory, and evidence you can inspect.
           </p>
           <div class="hero-actions" aria-label="Hero actions">
             <a class="button primary" href="#install">Install Aegis</a>
-            <a class="button secondary" href="#talents">Explore Talents</a>
+            <a class="button secondary" href="https://docs.aegis.haloforge.dev/">Read the docs</a>
           </div>
         </div>
         <div class="hero-art" aria-hidden="true"></div>
@@ -62,14 +63,14 @@
       <section class="intro band" aria-labelledby="intro-title">
         <div class="section-inner two-column">
           <div>
-            <p class="eyebrow">Self-hostable by design</p>
-            <h2 id="intro-title">A durable brain, with your machine as the hands.</h2>
+            <p class="eyebrow">Owner-first architecture</p>
+            <h2 id="intro-title">Core owns state. Apps and nodes bring the interface and hands.</h2>
           </div>
           <p>
-            Aegis runs as native server and CLI binaries. The Local Gateway
-            stays on your Mac, Windows, or Linux machine for files, terminal,
-            browser, GUI, and local MCP tools. Channels are optional surfaces;
-            plugins can be the first way you use Aegis.
+            Aegis Core keeps sessions, tasks, approvals, memory, tools, channels,
+            provider traces, and evidence. Native apps are the daily user
+            experience. Local Gateway and Native Nodes execute explicit payloads
+            on computers and devices instead of guessing from prose.
           </p>
         </div>
       </section>
@@ -80,8 +81,8 @@
             <p class="eyebrow">Quick install</p>
             <h2 id="install-title">Choose the path that matches your setup.</h2>
             <p>
-              Full self-host starts native Aegis locally. Worker-only connects
-              this machine to an Aegis Server you already run elsewhere.
+              Full self-host runs Aegis Core locally with Docker. Worker-only
+              connects this machine to a Core you already run elsewhere.
             </p>
           </div>
 
@@ -91,8 +92,8 @@
               <h3>macOS Apple Silicon</h3>
               <pre><code>curl -fsSL https://raw.githubusercontent.com/HaloForgeAI/aegis-release/main/install.sh | bash</code></pre>
               <p>
-                Installs the macOS arm64 CLI, creates the release profile directory,
-                writes local config, and starts native Aegis services.
+                Installs the macOS arm64 CLI, creates the self-host directory,
+                writes local config, and starts Aegis Core through Docker.
               </p>
             </article>
             <article class="step-card">
@@ -101,8 +102,8 @@
               <pre><code>iwr https://raw.githubusercontent.com/HaloForgeAI/aegis-release/main/install.ps1 -OutFile install-aegis.ps1
 powershell -ExecutionPolicy Bypass -File .\install-aegis.ps1</code></pre>
               <p>
-                Installs `aegis.exe`, prepares `~/.aegis/profiles/release`, and runs
-                native Aegis services on Windows.
+                Installs `aegis.exe`, prepares `~/.aegis/self-host`, and runs
+                the same containerized Aegis Core through Docker Desktop.
               </p>
             </article>
             <article class="step-card">
@@ -113,8 +114,9 @@ powershell -ExecutionPolicy Bypass -File .\install-aegis.ps1</code></pre>
   AEGIS_ACCESS_TOKEN="owner-token" \
   bash -s -- --worker-only</code></pre>
               <p>
-                Use this when the server lives elsewhere. This machine
-                contributes tools and local context through the Local Gateway.
+                Use this when the server lives elsewhere. It does not install a
+                standalone non-Docker Aegis Core; this machine contributes
+                tools and local context through the Local Gateway.
               </p>
             </article>
           </div>
@@ -122,7 +124,7 @@ powershell -ExecutionPolicy Bypass -File .\install-aegis.ps1</code></pre>
           <div class="requirement-panel">
             <h3>Before you start</h3>
             <ul class="pill-list">
-              <li>Native Linux, macOS Apple Silicon, or Windows x64 host</li>
+              <li>Docker Desktop or Docker Engine + Compose v2 for full self-host</li>
               <li>Optional LLM provider keys for provider-backed planning</li>
               <li>Optional Telegram BotFather token if you want Telegram</li>
               <li>Optional Codex / Claude Code plugins if agents are your main surface</li>
@@ -132,18 +134,23 @@ powershell -ExecutionPolicy Bypass -File .\install-aegis.ps1</code></pre>
           <div class="release-panel" aria-label="Current public release">
             <div>
               <p class="eyebrow">Current release</p>
-              <h3>Aegis v0.1.2 installs from public GitHub Release native bundles.</h3>
+              <h3>Aegis v0.1.2 installs from public GHCR and GitHub Releases.</h3>
               <p>
-                Full self-host downloads checksum-verifiable native bundles
-                from the public release repository, then starts the server,
-                CLI, and Local Gateway on your machine.
+                Full self-host pulls the official
+                ghcr.io/haloforgeai/aegis:v0.1.2 image anonymously, then uses
+                checksum-verified CLI archives from the public release
+                repository. The Docker archive remains a recovery asset for
+                constrained registries, not the normal install path.
               </p>
             </div>
-            <a
-              class="button dark"
-              href="https://github.com/HaloForgeAI/aegis-release/releases/tag/v0.1.2"
-              >View release</a
-            >
+            <div class="panel-actions">
+              <a
+                class="button dark"
+                href="https://github.com/HaloForgeAI/aegis-release/releases/tag/v0.1.2"
+                >View release</a
+              >
+              <a class="button outline" href="https://docs.aegis.haloforge.dev/install/">Install guide</a>
+            </div>
           </div>
         </div>
       </section>
@@ -151,52 +158,56 @@ powershell -ExecutionPolicy Bypass -File .\install-aegis.ps1</code></pre>
       <section class="band" id="paths" aria-labelledby="paths-title">
         <div class="section-inner">
           <div class="section-heading compact">
-            <p class="eyebrow">Ways to use Aegis</p>
-            <h2 id="paths-title">Start from the surface you already live in.</h2>
+            <p class="eyebrow">Native surfaces</p>
+            <h2 id="paths-title">Use Aegis from Chat, Workbench, CLI, mobile, or your coding agent.</h2>
           </div>
           <div class="feature-grid">
             <article class="feature-card">
-              <h3>CLI and MCP</h3>
+              <h3>Desktop app</h3>
               <p>
-                Inspect status, run readiness checks, expose Aegis MCP tools,
-                and keep local tool execution explicit and auditable.
+                Start and inspect Core, manage Local Gateway, use session-based
+                Chat, review tasks, approve sensitive work, and see evidence in
+                Workbench.
               </p>
             </article>
             <article class="feature-card">
-              <h3>Agent plugins</h3>
+              <h3>Mobile app</h3>
               <p>
-                Install the public Codex or Claude Code plugin so your coding
-                agent can operate Aegis state and workflows through MCP.
+                Chat on the go, receive notifications, review approvals, capture
+                voice or share-sheet context, and pair the phone as a Mobile
+                Native Node.
               </p>
             </article>
             <article class="feature-card">
-              <h3>Channels</h3>
+              <h3>CLI, MCP, and agents</h3>
               <p>
-                Add Telegram or other channels when you want Aegis to meet you
-                in chat. Channels are useful, not required.
+                Run diagnostics, expose MCP tools, connect Codex or Claude Code,
+                and keep automation auditable through the same Core state.
               </p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="band split" id="channels" aria-labelledby="channels-title">
+      <section class="band split" id="architecture" aria-labelledby="architecture-title">
         <div class="section-inner architecture">
           <div>
             <p class="eyebrow">Architecture</p>
-            <h2 id="channels-title">Control plane, Local Gateway, optional channels.</h2>
+            <h2 id="architecture-title">Aegis Manager plans. Workers and nodes execute explicit calls.</h2>
             <p>
-              Aegis Manager plans through a real provider. Workers execute
-              structured tool calls and return evidence. Chat messages,
-              plugins, CLI, and MCP all feed the same operating system.
+              Ordinary chat and channel messages go through Aegis Manager and a
+              real provider. Workers, Local Gateway, and Native Nodes receive
+              structured tool or task payloads, execute them, and record
+              evidence. Channels are useful surfaces; they are not the product's
+              hidden parser.
             </p>
           </div>
           <div class="diagram" aria-label="Aegis architecture">
-            <div class="node cloud">Native Aegis server</div>
+            <div class="node cloud">Aegis Core</div>
             <div class="connector"></div>
-            <div class="node edge">Local Gateway on your host</div>
+            <div class="node edge">Manager · Gateway · Sessions · Evidence</div>
             <div class="connector"></div>
-            <div class="node tools">Files · terminal · browser · MCP · channels</div>
+            <div class="node tools">Desktop · mobile · Local Gateway · agent runners</div>
           </div>
         </div>
       </section>
@@ -204,18 +215,26 @@ powershell -ExecutionPolicy Bypass -File .\install-aegis.ps1</code></pre>
       <section class="band light" id="talents" aria-labelledby="talents-title">
         <div class="section-inner">
           <div class="section-heading">
-            <p class="eyebrow">Talent Center</p>
-            <h2 id="talents-title">Aegis can discover capabilities without pretending every market feature is done.</h2>
+            <p class="eyebrow">Talents and documentation</p>
+            <h2 id="talents-title">Installable capabilities, real status labels, and a proper user manual.</h2>
             <p>
               Aegis already has Talent registry, runtime health, testkit,
               prepare gates, adapter handoff evidence, and MCP install-plan
-              APIs. The public Talent Center starts as a curated catalog and
-              grows into a reviewed marketplace.
+              APIs. The public docs now separate release-ready user paths from
+              source-ready or phase-test-pending development evidence.
             </p>
           </div>
           <div class="status-grid">
             <article class="feature-card">
-              <h3>Available now</h3>
+              <h3>User documentation</h3>
+              <p>
+                Installation, first run, desktop and mobile app guides, use
+                cases, architecture, status terms, and troubleshooting live in
+                the Starlight manual.
+              </p>
+            </article>
+            <article class="feature-card">
+              <h3>Available capabilities</h3>
               <p>
                 Official seed catalogs, `GET /api/talent-center/mcp`, install
                 plans, and public agent plugin distribution.
@@ -224,20 +243,14 @@ powershell -ExecutionPolicy Bypass -File .\install-aegis.ps1</code></pre>
             <article class="feature-card">
               <h3>Next layer</h3>
               <p>
-                Cloudflare Pages Functions or Workers for search, previews,
-                publisher submissions, review queues, and signed catalog
-                snapshots.
-              </p>
-            </article>
-            <article class="feature-card">
-              <h3>Not rushed</h3>
-              <p>
-                A real open marketplace needs identity, database-backed review,
-                rollback, signing, owner/profile-safe permissions, and polished UI.
+                Reviewed marketplace flows need identity, database-backed
+                review, rollback, signing, tenant-safe permissions, and polished
+                UI before they are called complete.
               </p>
             </article>
           </div>
           <div class="ecosystem-links" aria-label="Ecosystem links">
+            <a class="button dark" href="https://docs.aegis.haloforge.dev/">User docs</a>
             <a class="button dark" href="https://github.com/HaloForgeAI/aegis-agent-plugins">Agent plugins</a>
             <a class="button dark" href="https://github.com/HaloForgeAI/aegis-release">Installers</a>
             <a class="button dark" href="https://github.com/HaloForgeAI/aegis-talent-center">Talent Center</a>
@@ -251,7 +264,7 @@ powershell -ExecutionPolicy Bypass -File .\install-aegis.ps1</code></pre>
         <img src="/assets/aegis-icon-white.svg" alt="" />
         <span>Aegis by HaloForgeAI</span>
       </div>
-      <p>Self-hosted control plane · Local Gateway · Talent Center</p>
+      <p>Aegis Core · Native apps · Local Gateway · Talents</p>
     </footer>
   </body>
 </html>

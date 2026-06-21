@@ -189,6 +189,11 @@ h1 {
   color: var(--white);
 }
 
+.button.outline {
+  border-color: rgba(18, 51, 85, 0.28);
+  color: var(--blue-deep);
+}
+
 .band {
   padding: clamp(56px, 8vw, 104px) clamp(20px, 6vw, 88px);
   background: var(--white);
@@ -285,6 +290,12 @@ h1 {
   border: 1px solid rgba(27, 75, 130, 0.18);
   border-radius: 8px;
   background: #eef4f9;
+}
+
+.panel-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .release-panel p:last-child {

@@ -1,0 +1,2 @@
+/docs https://docs.aegis.haloforge.dev/ 302
+/docs/* https://docs.aegis.haloforge.dev/:splat 302
