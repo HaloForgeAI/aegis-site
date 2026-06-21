@@ -9,7 +9,6 @@ Public brand and launch site for Aegis, the HaloForgeAI personal AI assistant hu
 - Public release repository: `HaloForgeAI/aegis-release`
 - User documentation repository: `HaloForgeAI/aegis-docs`
 - Documentation domain target: `https://docs.aegis.haloforge.dev`
-- Current verified docs URL: `https://aegis-docs-e1i.pages.dev`
 
 ## Local Preview
 
@@ -42,19 +41,10 @@ Cloudflare secret cannot break normal content pushes.
 ## Documentation
 
 The formal user manual lives in `HaloForgeAI/aegis-docs`, an Astro Starlight
-site. This brand site keeps a compact product overview and redirects `/docs`
-and `/docs/*` to the current verified Pages URL until the custom domain
-`docs.aegis.haloforge.dev` is attached.
-
-When DNS access is available, replace the existing `docs.aegis.haloforge.dev`
-record with:
-
-```text
-Type: CNAME
-Name: docs.aegis
-Target: aegis-docs-e1i.pages.dev
-Proxy: enabled
-```
+site. It is currently paused while screenshots and examples are reworked to use
+only cropped, app-only, reviewed public material. This brand site redirects
+legacy `/docs` and `/docs/*` requests to the paused docs site but does not link
+to it from the homepage.
 
 ## Domain
 

@@ -30,7 +30,6 @@ const checks = [
   ["architecture section", /id="architecture"/],
   ["talents section", /id="talents"/],
   ["brand term", /personal AI assistant hub/],
-  ["docs link", /href="\/docs\/"/],
   ["release link", /HaloForgeAI\/aegis-release/],
   ["current release", /Aegis v0\.1\.2 installs from public GHCR and GitHub Releases/],
   ["official image", /ghcr\.io\/haloforgeai\/aegis:v0\.1\.2/],
