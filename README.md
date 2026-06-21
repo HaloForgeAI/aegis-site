@@ -46,6 +46,16 @@ site. This brand site keeps a compact product overview and redirects `/docs`
 and `/docs/*` to the current verified Pages URL until the custom domain
 `docs.aegis.haloforge.dev` is attached.
 
+When DNS access is available, replace the existing `docs.aegis.haloforge.dev`
+record with:
+
+```text
+Type: CNAME
+Name: docs.aegis
+Target: aegis-docs-e1i.pages.dev
+Proxy: enabled
+```
+
 ## Domain
 
 The Pages project has the custom domain `aegis.haloforge.dev` attached through
