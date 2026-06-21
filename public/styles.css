@@ -343,6 +343,20 @@ h1 {
   font-weight: 800;
 }
 
+.asset-name {
+  margin: 18px 0 10px;
+  padding: 12px 14px;
+  border: 1px solid rgba(27, 75, 130, 0.18);
+  border-radius: 8px;
+  background: #f1f6fb;
+  color: var(--blue-deep);
+  font-family:
+    "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
 h3 {
   margin: 18px 0 10px;
   font-size: 1.16rem;

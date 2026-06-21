@@ -82,74 +82,70 @@
             <p class="eyebrow">Quick install</p>
             <h2 id="install-title">Choose the path that matches your setup.</h2>
             <p>
-              Full self-host runs Aegis Core locally with Docker. Worker-only
-              connects this machine to a Core you already run elsewhere.
+              Aegis is moving to native application installs first. Start with
+              the app for your platform, then choose how your devices reach
+              Aegis Core.
             </p>
           </div>
 
           <div class="quickstart-grid">
             <article class="step-card">
               <span class="step-number">1</span>
-              <h3>macOS Apple Silicon</h3>
-              <pre><code>curl -fsSL https://raw.githubusercontent.com/HaloForgeAI/aegis-release/main/install.sh | bash</code></pre>
+              <h3>macOS</h3>
+              <p class="asset-name">Aegis-&lt;version&gt;-macos-arm64.dmg</p>
               <p>
-                Installs the macOS arm64 CLI, creates the self-host directory,
-                writes local config, and starts Aegis Core through Docker.
+                Install Aegis.app from the DMG. The desktop app manages local
+                Core, Local Gateway, nodes, Chat, Workbench, and runtime status.
               </p>
             </article>
             <article class="step-card">
               <span class="step-number">2</span>
-              <h3>Windows x64</h3>
-              <pre><code>iwr https://raw.githubusercontent.com/HaloForgeAI/aegis-release/main/install.ps1 -OutFile install-aegis.ps1
-powershell -ExecutionPolicy Bypass -File .\install-aegis.ps1</code></pre>
+              <h3>Windows</h3>
+              <p class="asset-name">Aegis-&lt;version&gt;-windows-x64.msix</p>
               <p>
-                Installs `aegis.exe`, prepares `~/.aegis/self-host`, and runs
-                the same containerized Aegis Core through Docker Desktop.
+                Use the signed MSIX when available. Portable zip builds are for
+                trusted testing only; MSI is an enterprise follow-up.
               </p>
             </article>
             <article class="step-card">
               <span class="step-number">3</span>
-              <h3>Worker-only</h3>
-              <pre><code>curl -fsSL https://raw.githubusercontent.com/HaloForgeAI/aegis-release/main/install.sh | \
-  AEGIS_SERVER_URL="https://aegis.example.com" \
-  AEGIS_ACCESS_TOKEN="owner-token" \
-  bash -s -- --worker-only</code></pre>
+              <h3>Mobile</h3>
+              <p class="asset-name">iOS/TestFlight · IPA · Android APK/AAB</p>
               <p>
-                Use this when the server lives elsewhere. It does not install a
-                standalone non-Docker Aegis Core; this machine contributes
-                tools and local context through the Local Gateway.
+                Pair iPhone, iPad, or Android as daily Chat and approval
+                surfaces, and as Mobile Native Nodes where platform permissions allow.
               </p>
             </article>
           </div>
 
           <div class="requirement-panel">
-            <h3>Before you start</h3>
+            <h3>Connection choices</h3>
             <ul class="pill-list">
-              <li>Docker Desktop or Docker Engine + Compose v2 for full self-host</li>
-              <li>Optional LLM provider keys for provider-backed planning</li>
-              <li>Optional Telegram BotFather token if you want Telegram</li>
-              <li>Optional Codex / Claude Code plugins if agents are your main surface</li>
+              <li>Local-only for one computer</li>
+              <li>LAN for trusted home or lab networks</li>
+              <li>Tailscale Serve for private owner-device access</li>
+              <li>Cloudflare Tunnel for stable HTTPS hostnames and webhooks</li>
+              <li>Public VPS only with Aegis auth and scoped tokens</li>
             </ul>
           </div>
 
           <div class="release-panel" aria-label="Current public release">
             <div>
               <p class="eyebrow">Current release</p>
-              <h3>Aegis v0.1.2 installs from public GHCR and GitHub Releases.</h3>
+              <h3>Native app assets are the public install target.</h3>
               <p>
-                Full self-host pulls the official
-                ghcr.io/haloforgeai/aegis:v0.1.2 image anonymously, then uses
-                checksum-verified CLI archives from the public release
-                repository. The Docker archive remains a recovery asset for
-                constrained registries, not the normal install path.
+                Public releases should expose DMG, MSIX, APK/AAB, optional IPA,
+                and checksums, with the docs covering platform install and Core
+                connection choices.
               </p>
             </div>
             <div class="panel-actions">
               <a
                 class="button dark"
-                href="https://github.com/HaloForgeAI/aegis-release/releases/tag/v0.1.2"
+                href="https://github.com/HaloForgeAI/aegis-release/releases"
                 >View release</a
               >
+              <a class="button outline" href="https://docs.aegis.haloforge.dev/install/">Install guide</a>
             </div>
           </div>
         </div>
@@ -250,7 +246,7 @@ powershell -ExecutionPolicy Bypass -File .\install-aegis.ps1</code></pre>
           </div>
           <div class="ecosystem-links" aria-label="Ecosystem links">
             <a class="button dark" href="https://github.com/HaloForgeAI/aegis-agent-plugins">Agent plugins</a>
-            <a class="button dark" href="https://github.com/HaloForgeAI/aegis-release">Installers</a>
+            <a class="button dark" href="https://github.com/HaloForgeAI/aegis-release">Releases</a>
             <a class="button dark" href="https://github.com/HaloForgeAI/aegis-talent-center">Talent Center</a>
           </div>
         </div>
