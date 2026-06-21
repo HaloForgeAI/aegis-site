@@ -41,10 +41,10 @@ Cloudflare secret cannot break normal content pushes.
 ## Documentation
 
 The formal user manual lives in `HaloForgeAI/aegis-docs`, an Astro Starlight
-site. It is currently paused while screenshots and examples are reworked to use
-only cropped, app-only, reviewed public material. This brand site redirects
-legacy `/docs` and `/docs/*` requests to the paused docs site but does not link
-to it from the homepage.
+site deployed at `https://docs.aegis.haloforge.dev`. The public docs currently
+avoid product imagery; future visual captures should be reviewed app-only
+material before they are added. This brand site links to the docs homepage and
+redirects legacy `/docs` and `/docs/*` requests there.
 
 ## Domain
 
