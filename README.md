@@ -73,7 +73,7 @@ artifacts:
 1. Mirror native app release assets and `SHA256SUMS` into
    `HaloForgeAI/aegis-release` public GitHub Releases.
 2. Keep the homepage and docs centered on user-installable native assets:
-   macOS DMG, Windows MSIX, iOS/TestFlight or IPA, and Android APK/AAB.
+   macOS DMG, signed Windows MSIX, iOS/TestFlight or IPA, and Android APK/AAB.
 3. Verify the anonymous public release path for the native assets:
    - `Aegis-<version>-macos-arm64.dmg`
    - `Aegis-<version>-windows-x64.msix`
